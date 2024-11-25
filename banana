@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 17.11.2024 06:45:25
+// Design Name: 
+// Module Name: bcd_adder
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module bcd_adder(a,b,cin,sum,cout);
+input logic [7:0]a,b;
+input logic cin;
+output logic [7:0]sum;
+output logic cout;
+always_comb
+    begin
+    logic [8:0]s;
+    s=a+b+cin;
+    if (s>9)
+    sum=s+6;
+    else
+    sum=s;
+ cout=(s>9)?1:0;
+    end
+endmodule
