@@ -1,9 +1,9 @@
 module prefix_adder32(a,b,sum,cout);
-input loigc [31:0]a,b;
+input logic [31:0]a,b;
 output logic [31:0] sum;
 output logic cout;
 wire p,g;
-assign p=a^b;
+ assign[31:0] p=a^b;
 assign g=a&b;
 wire[31:0] c;
 assign c[0]=g[0];
